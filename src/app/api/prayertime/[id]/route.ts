@@ -3,13 +3,15 @@ import PrayerTime from "@/models/PrayerTime";
 import { connectDB } from "@/lib/mongoose";
 
 export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
+    
     await connectDB();
-    const ids = params.id;
-        console.log(ids);
+    
+    
+        
 
     try {
-        
-        const prayerTime = await PrayerTime.findById(ids);
+        const {id} = await params;
+        const prayerTime = await PrayerTime.findById(id);
         if (!prayerTime) {
             return NextResponse.json({ message: "Prayer time not found" }, { status: 404 });
         }
@@ -22,12 +24,12 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
 
 export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
     await connectDB();
-    const ids = params.id;
+    const {id} = params;
 
     try {
         const body = await req.json(); // Get the updated data from request body
 
-        const updatedPrayerTime = await PrayerTime.findByIdAndUpdate(ids, body, { 
+        const updatedPrayerTime = await PrayerTime.findByIdAndUpdate(id, body, { 
             new: true, // Return the updated document
             runValidators: true 
         });
