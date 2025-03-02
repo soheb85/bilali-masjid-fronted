@@ -94,7 +94,7 @@ const NamazCard = () => {
               const hours = time.getHours();
               const day = time.getDay(); // 0 = Sunday, 1 = Monday, ..., 5 = Friday
       
-              if (hours >= 12 && hours < 8) {
+              if (hours >= 22 || hours < 8) {
                 setName("Fajr");
                 setAzan(data[0].prayers.Fajr.azan);
                 setJamat(data[0].prayers.Fajr.jamat);
@@ -120,6 +120,10 @@ const NamazCard = () => {
                 setJamat(data[0].prayers.Isha.jamat);
               }
             }
+
+            console.log(jamat)
+            console.log(namaz)
+            console.log(name)
           }catch(error){
             console.log("error to fetch api",error)
           }
@@ -179,7 +183,7 @@ const NamazCard = () => {
             </div>
            <div>
             <div className='flex items-center place-content-center bg-slate-800 rounded-t-2xl'>
-            <h1 className='text-[45px]'>{jamat.slice(0,6)}</h1>
+            <h1 className='text-[45px]'>{jamat}</h1>
 
                 
                 

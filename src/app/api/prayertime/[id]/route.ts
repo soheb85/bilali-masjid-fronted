@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import PrayerTime from "@/models/PrayerTime";
 import { connectDB } from "@/lib/mongoose";
 
@@ -6,7 +6,7 @@ interface Params {
   params: { id: string };
 }
 
-export async function GET(request: NextRequest, { params }: Params) {
+export async function GET(request: Request, { params }: Params) {
   await connectDB();
 
   const id = params.id; // ✅ Extract `id` properly
@@ -22,7 +22,7 @@ export async function GET(request: NextRequest, { params }: Params) {
   }
 }
 
-export async function PUT(request: NextRequest, { params }: Params) {
+export async function PUT(request: Request, { params }: Params) {
   await connectDB();
 
   const id = params.id;
