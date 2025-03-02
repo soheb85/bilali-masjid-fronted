@@ -53,7 +53,7 @@ const AdminPage = () => {
     } else {
       // Fetch existing prayer data if logged in
       const fetchData = async () => {
-        const response = await fetch(`/api/prayertime/67c38487c4c177b5dcdd5ae3`);
+        const response = await fetch(`/api/adminget`);
         if (!response.ok) {
           console.error("Error fetching prayer data");
           return;
