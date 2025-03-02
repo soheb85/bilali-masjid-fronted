@@ -1,15 +1,14 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import PrayerTime from "@/models/PrayerTime";
 import { connectDB } from "@/lib/mongoose";
 
-interface Params {
-  params: { id: string };
-}
-
-export async function GET(request: Request, { params }: Params) {
+export async function GET(
+  request: NextRequest, 
+  context: { params: Record<string, string> } // ✅ Fix: Using `Record<string, string>`
+) {
   await connectDB();
 
-  const id = params.id; // ✅ Extract `id` properly
+  const id = context.params.id; // ✅ Extract `id` correctly
 
   try {
     const prayerTime = await PrayerTime.findById(id);
@@ -22,10 +21,13 @@ export async function GET(request: Request, { params }: Params) {
   }
 }
 
-export async function PUT(request: Request, { params }: Params) {
+export async function PUT(
+  request: NextRequest, 
+  context: { params: Record<string, string> } // ✅ Fix: Using `Record<string, string>`
+) {
   await connectDB();
 
-  const id = params.id;
+  const id = context.params.id;
   const body = await request.json();
 
   try {
