@@ -1,16 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
-
 import PrayerTime from "@/models/PrayerTime";
 import { connectDB } from "@/lib/mongoose";
 
-// ✅ GET request to fetch a single prayer time by ID
+// ✅ Ensure the function arguments follow Next.js 14+ API route structure
 export async function GET(
   request: NextRequest, 
-  context: { params: { id: string } } // ✅ Correct structure
+  { params }: { params: { id: string } } // ✅ Fix: Destructure `params` directly
 ) {
   await connectDB();
 
-  const { id } = context.params; // ✅ Extract `id` correctly
+  const { id } = params; // ✅ Extract `id` correctly
 
   try {
     const prayerTime = await PrayerTime.findById(id);
@@ -34,11 +33,11 @@ export async function GET(
 // ✅ PUT request to update a single prayer time by ID
 export async function PUT(
   request: NextRequest, 
-  context: { params: { id: string } }
+  { params }: { params: { id: string } } // ✅ Fix: Destructure `params` directly
 ) {
   await connectDB();
 
-  const { id } = context.params; // ✅ Use `context.params.id`
+  const { id } = params; // ✅ Use `params.id`
   const body = await request.json(); // ✅ Get request body
 
   try {
