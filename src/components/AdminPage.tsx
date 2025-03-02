@@ -147,9 +147,10 @@ const AdminPage = () => {
             {["azan", "jamat", "start", "end"].map((field) => (
               <label key={field} className="block">
                 {field.charAt(0).toUpperCase() + field.slice(1)}:
-                <input type="text" value={formData.prayers[prayer][field]}
-                  onChange={(e) => handleChange(e, prayer, field)}
-                  className="border p-2 w-full rounded" />
+                <input type="text" 
+                value={formData.prayers[prayer as keyof FormData["prayers"]][field as keyof PrayerTimes]}
+                onChange={(e) => handleChange(e, prayer as keyof FormData["prayers"], field as keyof PrayerTimes)}
+                className="border p-2 w-full rounded" />
               </label>
             ))}
           </div>
