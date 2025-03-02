@@ -316,10 +316,10 @@ const NamazCard = () => {
 </Dialog>
          <Separator/>
          <Dialog>
-  <DialogTrigger className='bg-red-400 rounded-2xl h-[35px]'>Jum'ah :</DialogTrigger>
+  <DialogTrigger className='bg-red-400 rounded-2xl h-[35px]'>Jum&apos;ah :</DialogTrigger>
   <DialogContent>
     <DialogHeader>
-    <DialogTitle className='text-red-600 text-2xl mb-2 tracking-wider flex justify-center md:text-4xl font-bold'>Jum'ah</DialogTitle>
+    <DialogTitle className='text-red-600 text-2xl mb-2 tracking-wider flex justify-center md:text-4xl font-bold'>Jum&apos;ah</DialogTitle>
     <Separator className='mb-2'/>
       <div className='grid grid-cols-2 place-items-center '>
         <div>

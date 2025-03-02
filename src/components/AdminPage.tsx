@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-const AdminPage = ({ id }: { id: string }) => {
+const AdminPage = () => {
   const [formData, setFormData] = useState({
     islamicDate: "",
     temperature: "",
