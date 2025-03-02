@@ -61,7 +61,7 @@ const Navbar = () => {
 
     const namazTime = async ()=>{
       try{
-        const response = await fetch("/api/prayertime",{
+        const response = await fetch("/api/frontendtime",{
           method:"GET",
           headers:{"Content-Type":"application/json" }
         }
