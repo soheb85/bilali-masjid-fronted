@@ -10,7 +10,7 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
         
 
     try {
-        const {id} = await params;
+        const {id} = params;
         const prayerTime = await PrayerTime.findById(id);
         if (!prayerTime) {
             return NextResponse.json({ message: "Prayer time not found" }, { status: 404 });
