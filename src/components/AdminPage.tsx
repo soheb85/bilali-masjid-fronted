@@ -95,7 +95,7 @@ const AdminPage = () => {
 
     setLoading(true);
 
-    const response = await fetch(`/api/prayertime/67c38487c4c177b5dcdd5ae3`, {
+    const response = await fetch(`/api/prayertime`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
