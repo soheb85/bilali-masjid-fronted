@@ -45,6 +45,13 @@ const content = [
       description2:
       "  than the world and everything.",
   },
+  {
+    title: "Virtues of Fajr Salah ✨",
+    description1:
+      "The two Rakat of Fajr are better",
+      description2:
+      "  than the world and everything.",
+  },
 ];
 
 

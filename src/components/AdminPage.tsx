@@ -4,8 +4,30 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
+type PrayerTimes = {
+  azan: string;
+  jamat: string;
+  start: string;
+  end: string;
+};
+
+type FormData = {
+  islamicDate: string;
+  temperature: string;
+  sehriTime: string;
+  iftarTime: string;
+  prayers: {
+    Fajr: PrayerTimes;
+    Dhuhr: PrayerTimes;
+    Asr: PrayerTimes;
+    Maghrib: PrayerTimes;
+    Isha: PrayerTimes;
+    Jumma: PrayerTimes;
+  };
+};
+
 const AdminPage = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     islamicDate: "",
     temperature: "",
     sehriTime: "",
@@ -43,7 +65,9 @@ const AdminPage = () => {
     }
   }, [router]);
   // Handle input changes
-  const handleChange = (e: any, prayerName?: string, field?: string) => {
+  const handleChange = ( e: React.ChangeEvent<HTMLInputElement>,
+    prayerName?: keyof FormData["prayers"],
+    field?: keyof PrayerTimes) => {
     const { name, value } = e.target;
     if (prayerName) {
       setFormData((prev) => ({

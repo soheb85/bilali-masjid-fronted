@@ -148,7 +148,7 @@ const NamazCard = () => {
       
   
   return (
-    <div className={`${poppins.className} flex flex-col md:flex-row items-center justify-center p-4`}> 
+    <div id='NamazTime' className={`${poppins.className} flex flex-col md:flex-row items-center justify-center p-4`}> 
       
       {/* Timetable Section */}
       <div className="w-full md:w-1/2 bg-black text-white p-4 md:p-6 rounded-lg shadow-lg text-center">

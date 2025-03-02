@@ -115,7 +115,7 @@ const Navbar = () => {
                     <ul className=' gap-[40px] text-lg font-[500] hidden md:flex'>
                         <li>Home</li>
                         <li>Donation</li>
-                        <li>Namaz Time</li>
+                        <li><Link href={"#NamazTime"}>Namaz Time</Link></li>
                         <li>Contact</li>
                         <li><Link href={"/login"} legacyBehavior ><a target="_blank">Admin</a></Link></li>
                     </ul>
@@ -173,7 +173,7 @@ const Navbar = () => {
   <DropdownMenuContent>
     <DropdownMenuItem variant='destructive'>Profile</DropdownMenuItem>
     <DropdownMenuItem>Donation</DropdownMenuItem>
-    <DropdownMenuItem>Namaz Time</DropdownMenuItem>
+    <DropdownMenuItem><Link href={"#NamazTime"}>Namaz Time</Link></DropdownMenuItem>
     <DropdownMenuItem>Contact</DropdownMenuItem>
     <DropdownMenuItem className='text-green-500'>
     <Link href={"/login"} legacyBehavior ><a target="_blank">Admin</a></Link>
