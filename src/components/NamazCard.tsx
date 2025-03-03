@@ -183,7 +183,7 @@ const NamazCard = () => {
             </div>
            <div>
             <div className='flex items-center place-content-center bg-slate-800 rounded-t-2xl'>
-            <h1 className='text-[45px]'>{jamat}</h1>
+            <h1 className='text-[45px]'>{jamat.slice(0,6)}</h1>
 
                 
                 

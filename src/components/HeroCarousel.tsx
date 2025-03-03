@@ -31,7 +31,7 @@ const content = [
       description3:
       "  Madarsa 1 Jamat - 1:40 PM",
       description4:
-      "  Madarsa 2 Jamat - 4:40 PM ",
+      "  Madarsa 2 Jamat - 2:40 PM ",
   },
   {
     title: "Ramadan Iftar & Suhoor 🌙",
@@ -59,7 +59,7 @@ const content = [
 
 const HeroCarousel = () => {
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
+    Autoplay({ delay: 3000, stopOnInteraction: true })
   )
  
 
