@@ -102,7 +102,7 @@ const NamazCard = () => {
                 setName("Jum'ah");
                 setAzan(data[0].prayers.Jumma.azan);
                 setJamat(data[0].prayers.Jumma.jamat);
-              } else if (hours >= 12 && hours < 15) {
+              } else if (hours >= 8 && hours < 15) {
                 setName("Zuhar");
                 setAzan(data[0].prayers.Dhuhr.azan);
                 setJamat(data[0].prayers.Dhuhr.jamat);
