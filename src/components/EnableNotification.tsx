@@ -30,7 +30,7 @@ export default function EnableNotification() {
   }, []);
 
   async function subscribeToPush() {
-    const NEXT_PUBLIC_VAPID_KEY = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY as string;
+    const NEXT_PUBLIC_VAPID_KEY = process.env.VAPID_PUBLIC_KEY as string;
     if (!NEXT_PUBLIC_VAPID_KEY) {
       alert("VAPID_PUBLIC_KEY is missing!");
       return;
