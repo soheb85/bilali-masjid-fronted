@@ -4,9 +4,13 @@ import webpush from "web-push";
 import { connectDB } from "@/lib/mongoose";
 import Subscriber from "@/models/Subscriber";
 
+function sanitizeVapidKey(key: string): string {
+  return key.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+}
+
 webpush.setVapidDetails(
   "mailto:sk9324458770@gmail.com", // Fixed email format
-  process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY as string,
+  sanitizeVapidKey(process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY as string),
   process.env.VAPID_PRIVATE_KEY!
 );
 
