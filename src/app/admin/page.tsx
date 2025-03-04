@@ -26,12 +26,13 @@ const Admin = () => {
   return(
     <>
    <AdminPage />
+   <div className='mb-10 mt-5 ml-10'>
+    <AdminNotification/>
+   </div>
    <div>
     <CarouselData/>
    </div>
-   <div>
-    <AdminNotification/>
-   </div>
+   
    </>
   )
 };
