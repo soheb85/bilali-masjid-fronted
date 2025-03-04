@@ -18,5 +18,4 @@ self.addEventListener('push', function (event) {
 self.addEventListener('notificationclick', function (event) {
   console.log('Notification click received.')
   event.notification.close()
-  event.waitUntil(clients.openWindow('https://bilalimasjid.vercel.app/'))
 })
