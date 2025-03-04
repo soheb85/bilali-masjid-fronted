@@ -21,6 +21,7 @@ export default function LoaderPage() {
       size="lg"
       value={value}
       minValue={50}
+      color="primary"
     
       
     />
