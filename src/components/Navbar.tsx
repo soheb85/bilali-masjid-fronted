@@ -20,6 +20,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import Link from 'next/link';
+import EnableNotification from './EnableNotification';
 
 
 const poppins = Poppins({subsets:["latin"],weight:["400","500","600","700","800","900"]})
@@ -118,6 +119,7 @@ const Navbar = () => {
                         <li><Link href={"#NamazTime"}>Namaz Time</Link></li>
                         <li>Contact</li>
                         <li><Link href={"/login"} legacyBehavior ><a target="_blank">Admin</a></Link></li>
+                        <li><EnableNotification/></li>
                     </ul>
                 </div >
                 <div className={`${poppins.className} font-[500] flex items-center gap-2`}>
@@ -178,6 +180,7 @@ const Navbar = () => {
     <DropdownMenuItem className='text-green-500'>
     <Link href={"/login"} legacyBehavior ><a target="_blank">Admin</a></Link>
     </DropdownMenuItem>
+    <DropdownMenuItem><EnableNotification/></DropdownMenuItem>
   </DropdownMenuContent>
 </DropdownMenu>
                 </div>

@@ -3,6 +3,7 @@ import AdminPage from '@/components/AdminPage';
 import CarouselData from '@/components/CarouselData';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import AdminNotification from '@/components/AdminNotification';
 
 const Admin = () => {
   const router = useRouter();
@@ -27,6 +28,9 @@ const Admin = () => {
    <AdminPage />
    <div>
     <CarouselData/>
+   </div>
+   <div>
+    <AdminNotification/>
    </div>
    </>
   )
