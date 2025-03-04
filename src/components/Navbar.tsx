@@ -162,7 +162,7 @@ const Navbar = () => {
             افطار کی دعا  
           </DialogDescription>
           <p className="text-center text-black font-arabic text-lg">
-            اللهم إني لك صمت وبك آمنت وعليك توكلت وعلى رزقك أفطرت
+          اَللّٰهُمَّ اِنِّی لَکَ صُمْتُ وَبِکَ اٰمَنْتُ وَعَلَيْکَ تَوَکَّلْتُ وَعَلٰی رِزْقِکَ اَفْطَرْتُ
           </p>
         </DialogHeader>
       </DialogContent>

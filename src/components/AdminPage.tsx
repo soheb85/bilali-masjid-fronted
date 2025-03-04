@@ -47,9 +47,9 @@ const AdminPage = () => {
 
   // Check if user is logged in
   useEffect(() => {
-    const user = localStorage.getItem("user");
-    if (!user) {
-      router.push("/login"); // If not logged in, redirect to login page
+    const auth = localStorage.getItem("isAuthenticated");
+    if (auth !== "true") {
+      router.push("/login");
     } else {
       // Fetch existing prayer data if logged in
       const fetchData = async () => {
@@ -164,7 +164,20 @@ const AdminPage = () => {
         >
           {loading ? "Updating..." : "Update Prayer Timings"}
         </button>
+        
       </form>
+      <div className="p-6 bg-gray-100 rounded-lg shadow-md">
+      <h2 className="text-xl font-bold mb-4">Welcome to Admin Dashboard</h2>
+      <button 
+        onClick={() => {
+          localStorage.removeItem("isAuthenticated"); // Logout user
+          router.push("/login");
+        }} 
+        className="bg-red-500 text-white p-2 rounded"
+      >
+        Logout
+      </button>
+    </div>
     </div>
   );
 };
