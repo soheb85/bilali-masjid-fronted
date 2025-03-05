@@ -16,12 +16,12 @@ export default function LoaderPage() {
     <div className=" mt-2 mx-auto text-green-500">
       <Progress
       aria-label="Downloading..."
-      className="max-w-md"
+      className="max-w-md text-red-500 font-bold text-[25px] bg-slate-400/50 w-[100px] flex items-center rounded-lg tracking-wider"
       showValueLabel={true}
-      size="lg"
       value={value}
       minValue={50}
-      color="primary"
+      color="success"
+      
     
       
     />

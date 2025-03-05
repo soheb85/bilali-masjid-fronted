@@ -53,14 +53,19 @@ export default function EnableNotification() {
       body: JSON.stringify(subscription),
       headers: { "Content-Type": "application/json" },
     });
-
+    
     setSubscribed(true);
     alert("Push Notifications Enabled!");
   }
 
   return (
-    <button onClick={subscribeToPush} className="bg-blue-500 text-white px-4 py-2 rounded-xl">
-      {subscribed ? "Notifications Enabled" : "Enable Notifications"}
-    </button>
+    <button
+    onClick={subscribeToPush}
+    disabled={subscribed} // Disable button after enabling notifications
+    className={`px-4 py-2 rounded-lg text-white transition-all 
+      ${subscribed ? "bg-gray-400 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600 active:scale-95 focus:ring-2 focus:ring-blue-400"}`}
+  >
+    {subscribed ? "Notifications Enabled" : "Enable Notifications"}
+  </button>
   );
 }

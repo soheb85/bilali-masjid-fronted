@@ -1,6 +1,7 @@
 'use client'
 import HeroCarousel from "@/components/HeroCarousel";
 import HeroSection from "@/components/HeroSection";
+
 import NamazCard from "@/components/NamazCard";
 import Navbar from "@/components/Navbar";
 
@@ -29,6 +30,7 @@ export default function Home() {
     <div className="mt-2">
       <HeroSection/>
     </div>
+
     <div>
       <NamazCard/>
     </div>
