@@ -4,6 +4,7 @@ import CarouselData from '@/components/CarouselData';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import AdminNotification from '@/components/AdminNotification';
+import MarqueeAdmin from '@/components/MarqueeAdmin';
 
 const Admin = () => {
   const router = useRouter();
@@ -30,6 +31,9 @@ const Admin = () => {
     <AdminNotification/>
    </div>
    <div>
+    <MarqueeAdmin/>
+   </div>
+   <div className='mt-4'>
     <CarouselData/>
    </div>
    

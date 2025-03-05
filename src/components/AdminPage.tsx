@@ -165,19 +165,19 @@ const AdminPage = () => {
           {loading ? "Updating..." : "Update Prayer Timings"}
         </button>
         
-      </form>
-      <div className="p-6 bg-gray-100 rounded-lg shadow-md">
-      <h2 className="text-xl font-bold mb-4">Welcome to Admin Dashboard</h2>
+      
+      
+      
       <button 
         onClick={() => {
           localStorage.removeItem("isAuthenticated"); // Logout user
           router.push("/login");
         }} 
-        className="bg-red-500 text-white p-2 rounded"
+        className="bg-red-500 text-white p-2 rounded ml-4"
       >
         Logout
       </button>
-    </div>
+      </form>
     </div>
   );
 };
