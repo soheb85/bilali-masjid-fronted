@@ -4,7 +4,7 @@ import Image from 'next/image'
 const HeroSection = () => {
   return (
     <div className='flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-10 md:ml-15'>
-      <Image src={"/bilali masjid.webp"} alt='Bilali masjid' width={400} height={400} className='w-[400px] h-[500px] md:w-[800px] md:h-[450px] rounded-2xl shadow-2xl px-2 md:px-0'/>
+      <Image src={"/HaramImage.jpeg"} alt='Bilali masjid' width={400} height={400} className='w-[400px] h-[500px] md:w-[800px] md:h-[450px] rounded-2xl shadow-2xl px-2 md:px-0'/>
       <div className='md:w-1/2 p-4'>
         <h1 className="text-2xl font-bold">
         Bilali Masjid - Kurla East, Mumbai
