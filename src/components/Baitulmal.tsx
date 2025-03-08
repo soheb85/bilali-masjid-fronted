@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { Poppins } from "next/font/google";
 
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -108,8 +109,8 @@ const Baitulmal = () => {
       {/* Header Section */}
       <div className="text-center py-8 bg-white shadow-sm">
         <h1 className="text-3xl font-semibold text-gray-800">
-          Madarsa Anwarul Quran <br />
-          <span className="text-blue-600">Bilali Masjid Baitulmal</span>
+          Madarsa Anwarul Quran<br />
+          <span className="text-blue-600">Baitulmal</span>
         </h1>
       </div>
 
