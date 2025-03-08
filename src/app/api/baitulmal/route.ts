@@ -5,6 +5,11 @@ import cloudinary from "cloudinary";
 import { v4 as uuidv4 } from "uuid";
 import mongoose from "mongoose"; // Added mongoose import
 
+interface CloudinaryUploadResult {
+  secure_url: string;
+  public_id: string;
+}
+
 cloudinary.v2.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
@@ -56,18 +61,26 @@ export async function POST(request: Request) {
     const buffer = Buffer.from(await file.arrayBuffer());
     const uniqueFilename = await generateUniqueFilename(formData.get("name") as string);
 
-    const cloudinaryResponse = await new Promise<any>((resolve, reject) => {
-      cloudinary.v2.uploader.upload_stream(
-        {
-          folder: "payment",
-          public_id: uniqueFilename,
-          resource_type: "image",
-          overwrite: false,
-          transformation: [{ quality: "auto:best" }]
-        },
-        (error, result) => error ? reject(error) : resolve(result)
-      ).end(buffer);
-    });
+    const cloudinaryResponse = await new Promise<CloudinaryUploadResult>(
+      (resolve, reject) => {
+        cloudinary.v2.uploader.upload_stream(
+          {
+            folder: "payment",
+            public_id: uniqueFilename,
+            resource_type: "image",
+            overwrite: false,
+            transformation: [{ quality: "auto:best" }]
+          },
+          (error, result) => {
+            if (error) {
+              reject(error);
+            } else if (result) {
+              resolve(result);
+            }
+          }
+        ).end(buffer);
+      }
+    );
 
     // Create database entry
     const newEntry = await BaitulMal.create({
