@@ -1,13 +1,16 @@
 'use client'
 import React, { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
-import { Poppins } from "next/font/google";
+import { Poppins, Bebas_Neue } from "next/font/google";
+import kaaba from "../../public/kaaba-svgrepo-com.svg";
 
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
 });
+
+const bebas = Bebas_Neue({ subsets: ["latin"], weight: ["400"] });
 
 const Baitulmal = () => {
   const [formData, setFormData] = useState({
@@ -106,6 +109,16 @@ const Baitulmal = () => {
 
   return (
     <div className={`${poppins.className} min-h-screen bg-gray-100`}>
+      <div className="flex items-end ml-5 mb-2">
+            <Image
+              src={kaaba}
+              alt="Kaaba"
+              className="md:w-[40px] w-[30px]"
+            ></Image>
+            <h1 className={`${bebas.className} text-3xl md:text-3xl ml-1`}>
+              BILALI MASJID
+            </h1>
+          </div>
       {/* Header Section */}
       <div className="text-center py-8 bg-white shadow-sm">
         <h1 className="text-3xl font-semibold text-gray-800">
@@ -268,7 +281,7 @@ const Baitulmal = () => {
           </form>
         </div>
       </div>
-      <div className="max-w-4xl mx-auto px-4 pb-12">
+      <div className="max-w-4xl mx-auto px-4 pb-8">
         <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-lg">
           <h3 className="text-xl font-semibold text-gray-800 mb-3">
             For Any Payment Queries Contact:
@@ -288,8 +301,9 @@ const Baitulmal = () => {
               />
             </svg>
             <div>
-              <p className="font-medium">Shoaib Khan</p>
-              <p className="text-gray-600">Mobile: +91 93244 58770 </p>
+              <p className="font-medium">Bilali Masjid Trust</p>
+              <p className="text-gray-600">Yunus Khan - 9892128312 </p>
+              <p className="text-gray-600">Asif Saudagar </p>
               <p className="text-sm text-gray-500 mt-1">
                 Available: 8 PM - 10 PM
               </p>
@@ -297,6 +311,39 @@ const Baitulmal = () => {
           </div>
           <p className="mt-4 text-sm text-gray-600">
             Note: Please carry payment screenshot to get Recepit at Bilali Masjid Back Gate.
+          </p>
+        </div>
+      </div>
+      <div className="max-w-4xl mx-auto px-4 pb-12">
+        <div className="bg-red-50 border-l-4 border-t-4 border-red-400 p-6 rounded-lg">
+          <h3 className="text-xl font-semibold text-gray-800 mb-3">
+            For Any Website Related Queries Contact:
+          </h3>
+          <div className="flex items-center gap-3">
+            <svg 
+              className="w-6 h-6 text-green-600" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" 
+              />
+            </svg>
+            <div>
+              <p className="font-medium">Shoaib Khan</p>
+              <p className="text-gray-600"> Whatsapp - 9324458770</p>
+              
+              <p className="text-sm text-gray-500 mt-1">
+                Available: 7 PM - 10 PM
+              </p>
+            </div>
+          </div>
+          <p className="mt-4 text-sm text-gray-600">
+            Note: Whatsapp me the Queries!!!
           </p>
         </div>
       </div>
