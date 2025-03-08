@@ -22,6 +22,7 @@ import {
 import Link from "next/link";
 import EnableNotification from "./EnableNotification";
 
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -200,11 +201,15 @@ const Navbar = () => {
                   <DropdownMenuItem variant="destructive">
                     Profile
                   </DropdownMenuItem>
-                  <DropdownMenuItem>Donation</DropdownMenuItem>
                   <DropdownMenuItem>
                     <Link href={"#NamazTime"}>Namaz Time</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem>Contact</DropdownMenuItem>
+                  <DropdownMenuItem className="font-semibold">
+                    <Link href={"/baitulmal"} legacyBehavior>
+                    <a target="_blank">Baitulmal Payment</a>
+                    </Link>
+                    </DropdownMenuItem>
                   <DropdownMenuItem className="text-green-500">
                     <Link href={"/login"} legacyBehavior>
                       <a target="_blank">Admin</a>
