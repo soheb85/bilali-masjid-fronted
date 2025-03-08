@@ -239,7 +239,7 @@ const Baitulmal = () => {
 
               <div>
                 <label className="block text-sm font-medium mb-1 text-gray-600">
-                  Payment Receipt (JPG/PNG, max 5MB)
+                  Payment Screenshot (JPG/PNG, max 5MB)
                 </label>
                 <div className="flex items-center gap-4">
                   <input
