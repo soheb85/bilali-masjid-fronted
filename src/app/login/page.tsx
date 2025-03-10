@@ -10,7 +10,7 @@ const LoginPage = () => {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if ((username === "admin" && password === "Hussain@85") || (username === "soheb" && password === "kurlaeast")) {
+    if ((username === "admin" && password === "Stylishx@85") || (username === "soheb" && password === "kurlaeast") || (username === "Anees9648" && password === "Anees7400")) {
       localStorage.setItem("isAuthenticated", "true");
       router.push("/admin"); // Redirect to Admin Page
     } else {
